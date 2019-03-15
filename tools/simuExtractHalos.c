@@ -53,7 +53,7 @@ int main()
   printf("====================================================================\n");
   
   fprintf(stderr,"       IT IS NOT RECOMENDED TO USE THIS CODE ANYMORE\n");
-  fprintf(stderr," please us extract_particles/ found in ahf.tools/ instead!\n");
+  fprintf(stderr," please use extract_particles/ found in ahf.tools/ instead!\n");
   exit(0);
   
   printf("Please give name of input file:                ");

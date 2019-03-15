@@ -1921,3 +1921,25 @@
              - removed AHF2: it was never finished and likely never will... :-(
              - changed one of the -DSUSSING2013 instances to -DSUSSING2013_particles to avoid file format conflicts,
                i.e. SUSSING2013 now generates the usual haloids ('snapid00000000haloid'), but write the standard _particles file
+
+30/10/2018   - fixed haloid issue in _substructure and _particlesSTARDUST* files for -DSUSSING2013
+(BUILD 095)  - changed Power et al. (2003) convergence criterion to only use DM particles
+
+03/12/2018   - implemented bug fix to parallel tipsy io (courtesy Michael Tremmel!)
+(BUILD 096) 
+
+15/01/2019   - updated MergerTree.c and ahfHaloHistory.c (no new BUILD number)
+(---)          -> they both now allow for skipping snapshots in the construction/usage of merger trees 
+
+07/02/2019   - implemented native GIZMO reader (ic_filetype = 50/51)
+(BUILD 097)    -> this requires a working HDF5 installation (and hence when intended to be used, also use -DWITH_HDF5)
+               -> and as HDF5 is required, we also require to compile this with mpicc (and hence only work for "Standard MPI" and "Standard MPI+OpenMP")
+               -> Note: this reader was developed by Doug Rennehan!
+
+12/03/2019   - tweaked for GIZMO support (minor things, but an update to this version is recommended for smooth functioning...)
+(BUILD 098)    -> io_mgizmo.c: the filename format should be "path+stem+fileid+".hdf5"
+             - -DSUSSING2013 now overwrites -DAHFnewHaloIDs
+
+15/01/2019   - bug fixes in io_mgizmo.c
+(BUILD 099)  - bug fixes in io_gizmo_header_def.c related to missing definitions of GIZMO_HEADER_FILLHEADER
+             - bug fixes in io_gizmo.c related to missing definitions of CHECK_BLOCK, SKIP, etc.
