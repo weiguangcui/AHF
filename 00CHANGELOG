@@ -1940,6 +1940,18 @@
 (BUILD 098)    -> io_mgizmo.c: the filename format should be "path+stem+fileid+".hdf5"
              - -DSUSSING2013 now overwrites -DAHFnewHaloIDs
 
-15/01/2019   - bug fixes in io_mgizmo.c
+15/03/2019   - bug fixes in io_mgizmo.c
 (BUILD 099)  - bug fixes in io_gizmo_header_def.c related to missing definitions of GIZMO_HEADER_FILLHEADER
              - bug fixes in io_gizmo.c related to missing definitions of CHECK_BLOCK, SKIP, etc.
+
+18/03/2019   - Doug Rennehan also implemented GIZMO support for the "AGE " and "Z   " block of GIZMO files
+(BUILD 100)
+
+01/07/2019   - addressed some issues with GIZMO support that led to 'nan' values in the output files
+(BUILD 101)  - fixed issue with large GIZMO files (uint32_t -> uint64_t)
+
+20/05/2020   - for DM simulations with MULTIMASS WriteParticlesLegacy() now write the "(int)mass" of the dm particle as the type instead of '1' for all types
+(BUILD 102)  - fix typo in AHF.input-example: GIMZO -> GIZMO
+
+17/09/2020   - bug fix in ahf_io.c: AHF tried to write particle masses even without the -DMULTIMASS flag
+(BUILD 103)
